@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+ <head>
+    <title>GuestReviews</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href= "{% static 'static/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome/css/all.css' %}">
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >
+    <div class="container">
+      <a class="navbar-brand" href="../home/">Classio Hotel  <br> <span class="meta">"Make you feel like home"</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="/../../home/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/../../room/rooms/" class="nav-link">Rooms</a></li>
+          <li class="nav-item"><a href="/../../services/" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="/../../aboutus/" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="/../../blogs/" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="/../../contacts/" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="/../../reviews/" class="nav-link" >Reviews</a></li>
+
+        <li class="nav-item dropdown" style="list-style: none;">
+              {% if user.is_authenticated %}
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt fa-1.5x">{{ request.user }}</i></a>
+                     <div class="dropdown-menu">
+                         <a class="dropdown-item active" href="../../bookings/booklist">MyBooking</a>
+                      <a class="dropdown-item" href="/../../logout/">Logout</a>
+                    </div>
+              {% else %}
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt fa-1.5x">Account</i></a>
+                     <div class="dropdown-menu">
+                      <a class="dropdown-item" href="../signin/">Signin</a>
+                      <a class="dropdown-item" href="../registration/" >Create An Account</a>
+                    </div>
+              {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+  <div class = "container-fluid">
+ <div class="block-30 block-30-sm item" style="background-image: url({% static 'images/booking.jpg' %});" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-10">
+          <span class="subheading-sm">BOOKINGS</span>
+          <h2 class="heading">YOUR BOOKINGS</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+        <th scope="col">User</th>
+
+        <th scope="col">Room-Type</th>
+        <th scope="col">Price</th>
+        <th scope="col">Check-In</th>
+        <th scope="col">Check-Out</th>
+        <th scope="col">Adults</th>
+        <th scope="col">Children</th>
+        <th scope="col">BookedDate</th>
+         <th scope="col"></th>
+    </tr>
+  </thead>
+
+
+    {% for i in booking %}
+    <tr>
+
+        <td>{{request.user}}</td>
+
+        <td>{{i.RoomType.RoomType}}</td>
+        <td>${{i.RoomType.Price}}</td>
+        <td>{{i.Check_In}}</td>
+        <td>{{i.Check_Out}}</td>
+        <td>{{i.Adults}}</td>
+        <td>{{i.Children}}</td>
+        <td>{{i.BookedDate}}</td>
+        <td><a href="../cancel/{{i.id}}" type="submit" class="btn btn-danger btn-primary btn-block ">Cancel</a></td>
+
+
+    </tr>
+  {% endfor %}
+
+
+  </tbody>
+</table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  </body>
+  </html>

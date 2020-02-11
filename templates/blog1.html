@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+ <head>
+    <title>Blogs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href= "{% static 'static/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome/css/all.css' %}">
+  </head>
+  <html>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >
+    <div class="container">
+      <a class="navbar-brand" href="../home/">Classio Hotel  <br> <span class="meta">"Make you feel like home"</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="../home/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="../room/rooms/" class="nav-link">Rooms</a></li>
+          <li class="nav-item"><a href="../services/" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="../aboutus/" class="nav-link">About Us</a></li>
+          <li class="nav-item active"><a href="../blogs/" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="../contacts/" class="nav-link">Contact</a></li>
+             <li class="nav-item"><a href="../reviews/" class="nav-link">Reviews</a></li>
+
+          <li class="nav-item dropdown" style="list-style: none;">
+              {% if user.is_authenticated %}
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt fa-1.5x">{{ request.user }}</i></a>
+                     <div class="dropdown-menu">
+                         <a class="dropdown-item" href="../../bookings/booklist">MyBooking</a>
+                      <a class="dropdown-item" href="../logout/">Logout</a>
+                    </div>
+              {% else %}
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt fa-1.5x">Account</i></a>
+                     <div class="dropdown-menu">
+                      <a class="dropdown-item" href="../signin/">Signin</a>
+                      <a class="dropdown-item" href="../registration/" >Create An Account</a>
+                    </div>
+              {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+  <body>
+
+  <div class="block-30 block-30-sm item" style="background-image: url({% static 'images/blog.jpg' %})";data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-10">
+          <span class="subheading-sm">January 20, 2020 By Willy Legrand , Professor of Hospitality Management</span>
+              <h2 class="heading">Hotel Industry CEOs On Sustainability Entering The 2020s:</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="blog" class="site-section">
+    <div class="container">
+
+            <div class="row">
+
+              <div class="col-md-8">
+                <h2 class="mb-3"> The Window Of Opportunity For Hotels Is Now!</h2>
+
+                <p>The hospitality industry is leaving behind a decade of growth, which brought along jobs and fostered local and regional development. The industry that repeatedly outperformed the global economy enters a new decade where leading climate researchers talk about the potential consequences of a "global cascade of tipping points" (Lenton et al. in Nature, Nov. 27, 2019). The World Economic Forum Global Risks Report published this past week argues that all critical long-term risks are environmental. The industry is at the forefront of those tipping points in terms of responsibility and impact.</p>
+
+                <h2 class="mb-3 mt-5">Golden Age of Travel</h2>
+                <p>In a very connected, instagramable world, pristine destinations will be marketed, whether they want to or not. Additional funds for marketing are, arguably, then best used in sustainability initiatives at the destination. Chris Nassetta, President & Chief Executive Officer at Hilton, emphasizes that the hospitality industry is "in the midst of [what I call] a Golden Age of Travel" whereby "more people are traveling than ever, and they are craving unique, authentic experiences". Nassettta argues that the "flip side of that opportunity is the critical responsibility we have to protect our
+                  communities and environment". Cleaning beaches, improving cycling paths, facilitating food networks, facilitating sustainable training for businesses are just a few initiatives, which have direct impacts on making the destination more sustainable. Growth in travel equates to growth in tourism players, from hotels to restaurants and attractions. Suphajee Suthumpun, Group CEO at Dusit International states that "considering the collective impact the hospitality industry has on the environment, especially in terms of resource consumption and waste, going green is no longer a debate - it's a priority".</p>
+
+
+
+
+                <div class="pt-5 mt-5">
+                  <h3 class="mb-5">3 Comments</h3>
+                  <ul class="comment-list">
+                    <li class="comment">
+                      <div class="vcard bio">
+                        <img src="{% static 'images/person_1.jpg'%}" alt="Image placeholder">
+                      </div>
+                      <div class="comment-body">
+                        <h3>Jean Doe</h3>
+                        <div class="meta">January 21, 2020 at 1:21am</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <p><a href="#" class="reply">Reply</a></p>
+                      </div>
+                    </li>
+
+                    <li class="comment">
+                      <div class="vcard bio">
+                        <img src="{% static 'images/person_2.jpg'%}"alt="Image placeholder">
+                      </div>
+                      <div class="comment-body">
+                        <h3>Kiara</h3>
+                        <div class="meta">January 26, 2020 at 8:31pm</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <p><a href="#" class="reply">Reply</a></p>
+                      </div>
+
+                      <ul class="children">
+                        <li class="comment">
+                          <div class="vcard bio">
+                            <img src="{% static 'images/person_3.jpg'%}" alt="Image placeholder">
+                          </div>
+                          <div class="comment-body">
+                            <h3>John Adams</h3>
+                            <div class="meta">January 27, 2020 at 7:00pm</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                            <p><a href="#" class="reply">Reply</a></p>
+                          </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+
+
+
+                  <!-- END comment-list -->
+
+                  <div class="comment-form-wrap pt-5">
+                    <h3 class="mb-5">Leave a comment</h3>
+                    <form action="#" class="p-5 bg-light">
+                      <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" id="name">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" class="form-control" id="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" class="form-control" id="website">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="" id="message" cols="20" rows="10" class="form-control"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+
+              </div> <!-- .col-md-8 -->
+              <div class="col-md-4 sidebar">
+                <div class="sidebar-box">
+                  <form action="#" class="search-form">
+                    <div class="form-group">
+                      <span class="icon fa fa-search"></span>
+                      <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                    </div>
+                  </form>
+                </div>
+
+                <div class="sidebar-box">
+                  <img src="{% static 'images/mark.jpg'%}" alt="Image placeholder" class="img-fluid mb-4 rounded">
+                  <h2>About The Author</h2>
+                    <h3><b>Willy Legrand</b>></h3>
+                  <p>Dr. Willy Legrand is Professor of Hospitality Management at the IUBH School of Business and Management in Bad Honnef - Bonn, Germany.
+                    He combines undergraduate studies in Geography and Hospitality Management followed by an MBA with a specialization in Corporate Environmental Management. Prof. Legrand obtained his PhD from Manchester Metropolitan University, UK.</p>
+                </div>
+
+                <div class="sidebar-box">
+                  <h3>Tag Cloud</h3>
+                  <div class="tagcloud">
+                    <a href="#" class="tag-cloud-link">Life</a>
+                    <a href="#" class="tag-cloud-link">Sport</a>
+                    <a href="#" class="tag-cloud-link">Tech</a>
+                    <a href="#" class="tag-cloud-link">Travel</a>
+                    <a href="#" class="tag-cloud-link">Hotel</a>
+                    <a href="#" class="tag-cloud-link">Sport</a>
+                    <a href="#" class="tag-cloud-link">Tech</a>
+                    <a href="#" class="tag-cloud-link">Travel</a>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  </body>
+  </html>

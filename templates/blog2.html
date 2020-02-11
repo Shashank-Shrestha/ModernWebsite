@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+ <head>
+    <title>Blogs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href= "{% static 'static/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome/css/all.css' %}">
+  </head>
+  <html>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" >
+    <div class="container">
+      <a class="navbar-brand" href="../home/">Classio Hotel  <br> <span class="meta">"Make you feel like home"</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="../home/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="../room/rooms/" class="nav-link">Rooms</a></li>
+          <li class="nav-item"><a href="../services/" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="../aboutus/" class="nav-link">About Us</a></li>
+          <li class="nav-item active"><a href="../blogs/" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="../contacts/" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="../reviews/" class="nav-link">Reviews</a></li>
+
+          <li class="nav-item dropdown" style="list-style: none;">
+                  {% if user.is_authenticated %}
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt fa-1.5x">{{ request.user }}</i></a>
+                     <div class="dropdown-menu">
+                         <a class="dropdown-item" href="../../bookings/booklist">MyBooking</a>
+                      <a class="dropdown-item" href="../logout/">Logout</a>
+                    </div>
+                     {% else %}
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt fa-1.5x">Account</i></a>
+                     <div class="dropdown-menu">
+                      <a class="dropdown-item" href="../signin/">Signin</a>
+                      <a class="dropdown-item" href="../registration/" >Create An Account</a>
+                    </div>
+                  {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+  <body>
+
+  <div class="block-30 block-30-sm item" style="background-image: url({% static 'images/blog.jpg' %})";data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-10">
+          <span class="subheading-sm">January 21, 2020 By David Berger, Founder and CEO of Volara</span>
+              <h3 class="heading">4 Ways the Google Assistant Interpreter Will Drive Guest Satisfaction Scores, Boost Loyalty</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="blog" class="site-section">
+    <div class="container">
+
+            <div class="row">
+
+              <div class="col-md-8">
+
+                <h3 class="mb-3"> Investing in translation technology will facilitate accurate dialogues with the world’s 1.4 billion tourists arriving at hotel properties</h3>
+                <p>2019 is the year of "experiential travel," with guests demanding more seamless, personalized and transformative stays. With the travel industry
+                    already achieving 1.4 billion international tourist arrivals worldwide (two years ahead of the 2020 prediction according to the UN World Tourism
+                    Organization), hoteliers need to address the most basic hospitality principle - hotel-to guest and guest-to-hotel communication. Today's modern,
+                    mobile-dependent travelers expect a frictionless experience. But what happens if no one at the hotel speaks their native language? Frustration sets in,
+                    especially when guests feel misunderstood by front desk staff the moment they check-in. What comes next is negative online reviews and potentially a flurry of lost business.</p>
+
+                <h4 >Here are 4 ways that the Google Assistant's interpreter mode will improve guests' perceptions of your hotel, boosting satisfaction and loyalty:</h4>
+
+                  <p> <b>1.Attracting New Travelers</b> <br> Online consumer reviews are a must in today's marketplace. Nearly everyone seeks out customer reviews before making a buying or booking decision.
+                      If you want to know if a hotel is foreigner-friendly, just "Google it."</p>
+
+                   <p> <b>2.Raising Service Levels</b> <br> Adding the Google Assistant's interpreter mode will generate good will by showing guests from a foreign market that you value their business and that the
+                       hotel is going the extra mile to ensure an exceptional stay experience.</p>
+
+                   <p> <b>3.Ensuring Consistency</b> <br> Consistency of service across the hotel enterprise is important, especially if you fly the flag of a global hotel brand. Placing a Google Nest Hub with the Google Assistant's
+                       interpreter mode at all properties within the portfolio ensures that consistency and it communicates to travelers that no matter which hotels they visit within the chain, they are guaranteed a frictionless stay
+                       due to the provided translation technology.</p>
+
+                   <p> <b>4.Motivating Employees</b> <br> Happy employees mean happy guests, and happy guests spend more money. By giving hotel staff tools that will make it easier for them to do their jobs, it will ultimately increase guest
+                       satisfaction and drive revenues.</p>
+
+                  <p> When guests have an unpleasant stay because they feel their needs aren't met or the language barrier causes too much confusion and frustration, the hotel can expect to lose business. The Google Assistant's interpreter mode on the Google Nest Hub,
+                      provisioned and managed by Volara, is a smart way of doing business.</p>
+
+
+
+                <div class="pt-5 mt-5">
+                  <h3 class="mb-5">3 Comments</h3>
+                  <ul class="comment-list">
+                    <li class="comment">
+                      <div class="vcard bio">
+                        <img src="{% static 'images/person_1.jpg'%}" alt="Image placeholder">
+                      </div>
+                      <div class="comment-body">
+                        <h3>Jean Doe</h3>
+                        <div class="meta">January 25, 2020 at 9:21am</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <p><a href="#" class="reply">Reply</a></p>
+                      </div>
+                    </li>
+
+                    <li class="comment">
+                      <div class="vcard bio">
+                        <img src="{% static 'images/person_2.jpg'%}"alt="Image placeholder">
+                      </div>
+                      <div class="comment-body">
+                        <h3>Kiara</h3>
+                        <div class="meta">January 30, 2020 at 4:31pm</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                        <p><a href="#" class="reply">Reply</a></p>
+                      </div>
+
+                      <ul class="children">
+                        <li class="comment">
+                          <div class="vcard bio">
+                            <img src="{% static 'images/person_3.jpg'%}" alt="Image placeholder">
+                          </div>
+                          <div class="comment-body">
+                            <h3>John Adams</h3>
+                            <div class="meta">January 31, 2020 at 3:00am</div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
+                            <p><a href="#" class="reply">Reply</a></p>
+                          </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+
+
+
+                  <!-- END comment-list -->
+
+                  <div class="comment-form-wrap pt-5">
+                    <h3 class="mb-5">Leave a comment</h3>
+                    <form action="#" class="p-5 bg-light">
+                      <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" class="form-control" id="name">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" class="form-control" id="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" class="form-control" id="website">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="" id="message" cols="20" rows="10" class="form-control"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
+                      </div>
+
+                    </form>
+                  </div>
+                </div>
+
+              </div> <!-- .col-md-8 -->
+              <div class="col-md-4 sidebar">
+                <div class="sidebar-box">
+                  <form action="#" class="search-form">
+                    <div class="form-group">
+                      <span class="icon fa fa-search"></span>
+                      <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                    </div>
+                  </form>
+                </div>
+
+                <div class="sidebar-box">
+                  <img src="{% static 'images/david.jpg'%}" alt="Image placeholder" class="img-fluid mb-4 rounded">
+                  <h2>About The Author</h2>
+                    <h3><b>David Berger</b>></h3>
+                  <p>David Berger was the first to conceive of, develop, and deliver a viable hotel voice assistant. He is the Founder and CEO of Volara -
+                      the voice hub for the hospitality industry. Volara’s conversation management software and secure integrations hub turns the leading consumer
+                      smart speakers and natural language processing platforms into a hotel business tool.</p>
+                </div>
+
+                <div class="sidebar-box">
+                  <h3>Tag Cloud</h3>
+                  <div class="tagcloud">
+                    <a href="#" class="tag-cloud-link">Life</a>
+                    <a href="#" class="tag-cloud-link">Sport</a>
+                    <a href="#" class="tag-cloud-link">Tech</a>
+                    <a href="#" class="tag-cloud-link">Travel</a>
+                    <a href="#" class="tag-cloud-link">Hotel</a>
+                    <a href="#" class="tag-cloud-link">Sport</a>
+                    <a href="#" class="tag-cloud-link">Tech</a>
+                    <a href="#" class="tag-cloud-link">Travel</a>
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+  </div>
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  </body>
+  </html>

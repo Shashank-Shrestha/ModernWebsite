@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Rooms</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href= "{% static 'static/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href= "{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="../
+      ../home/">Classio Hotel  <br> <span class="meta">"Make you feel like home"</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item "><a href="/../../home/" class="nav-link">Home</a></li>
+          <li class="nav-item active"><a href="" class="nav-link">Rooms</a></li>
+          <li class="nav-item"><a href="/../../services/" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="/../../aboutus/" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="/../../blogs/" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="/../../contacts/" class="nav-link">Contact</a></li>
+              <li class="nav-item"><a href="/../../reviews/" class="nav-link">Reviews</a></li>
+
+          <li class="nav-item dropdown" style="list-style: none;">
+                  {% if user.is_authenticated %}
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt fa-1.5x">{{ request.user }}</i></a>
+                     <div class="dropdown-menu">
+                       <a class="dropdown-item" href="../../bookings/booklist">MyBooking</a>
+                      <a class="dropdown-item" href="/../../logout/">Logout</a>
+                    </div>
+                     {% else %}
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt fa-1.5x">Account</i></a>
+                     <div class="dropdown-menu">
+                      <a class="dropdown-item" href="../../signin/">Signin</a>
+                      <a class="dropdown-item" href="../../registration/" >Create An Account</a>
+                    </div>
+                  {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+
+  <div class="block-30 block-30-sm item" style="background-image: url({% static 'images/rooms.jpg' %});" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-10">
+          <span class="subheading-sm">Rooms</span>
+          <h2 class="heading">Rooms &amp; Suites</h2>
+                <div class="input-group md-form form-sm form-1 pl-0">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fas fa-search text-white"
+                                                                                       aria-hidden="true"></i></span>
+                  </div>
+
+                       {% for message in messages %}
+                          <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                              {{ message | safe }}
+                          </div>
+                          {% endfor %}
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <input class="form-control my-0 py-1" type="text"  name="key" placeholder="Search" aria-label="Search"><button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search</button>
+                        </form>
+                </div>
+
+
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+        <div class="row" style="display:inline-flex">
+         {% for rd in room %}
+                 <div class="col-xl-4 col-md-4 col-lg-4" >
+                    <div class="block-34">
+                      <img src="http://127.0.0.1:8000/media/{{rd.image}}" style="height:100%;width:100%">
+                      <div class="text">
+                        <h2 class="heading">{{rd.RoomType}}</h2>
+                        <div class="price"><sup>$</sup><span class="number">{{rd.Price}}</span><sub>/per night</sub></div>
+                        <ul class="specs mb-5">
+                          <li><strong>Facilities:</strong> {{rd.Facilities}}</li>
+                          <li><strong>Size:</strong>{{rd.Size}}m<sup>2</sup></li>
+                          <li><strong>Bed Type:</strong>{{rd.BedType}}</li>
+                            <li><strong>Total_Rooms:</strong>{{rd.TotalRooms}}</li>
+                        </ul>
+                          <div class="col-md-12 col-lg-12 align-self-end">
+                              {% if user.is_authenticated %}
+                               <a  class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal{{ rd.id }}">BOOK NOW</a>
+                              {%else %}
+                              <a href="/bookings/loginfirst"> <button class="btn btn-primary btn-block" type="button">Book Now</button></a>
+                              {%endif%}
+                        </div>
+                      </div>
+                    </div>
+                 </div>
+                      <div class="modal fade" id="exampleModal{{ rd.id }}" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><b>BOOKING</b></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post" action="../../bookings/book/">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label><b>RoomType:</b></label>
+                                        <input type="text" class="form-control" name="id" value="{{ rd.id }}" hidden >
+                                        <input type="text" class="form-control" name="roomtype" value="{{ rd.RoomType }}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label><b>Price($):</b></label>
+                                        <input type="text" class="form-control" name="mid" value="${{ rd.Price }}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label><b>Check In:</b></label>
+                                        <input type="Date" id="checkin" class="form-control" name="checkin">
+                                    </div>
+
+                                      <div class="form-group">
+                                        <label><b>Check Out:</b></label>
+                                        <input type="Date" id="checkout" class="form-control" name="checkout">
+                                    </div>
+
+                                       <div class="form-group">
+                                        <label><b>Adults:</b></label>
+                                           <select name="adult" id="adults" class="form-control">
+                                              <option value="0">0</option>
+                                              <option value="1">1</option>
+                                              <option value="2">2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4+</option>
+                                            </select>
+                                       </div>
+
+                                       <div class="form-group">
+                                        <label><b>Children:</b></label>
+                                           <select name="child" id="children" class="form-control">
+                                              <option value="0">0</option>
+                                              <option value="1">1</option>
+                                              <option value="2">2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4+</option>
+                                            </select>
+                                       </div>
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                <button type="submit" class="btn btn-primary">BOOK NOW</button>
+                            </div>
+
+                                </form>
+                        </div>
+
+                    </div>
+                </div>
+
+<!-- Modal -->
+                      </div>
+             {% endfor %}
+
+              </div>
+            </div>
+        </div>
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
