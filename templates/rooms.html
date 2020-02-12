@@ -83,7 +83,7 @@
                           </div>
                           {% endfor %}
 
-                    <form method="post">
+                         <form method="post">
                         {% csrf_token %}
                         <input class="form-control my-0 py-1" type="text"  name="key" placeholder="Search" aria-label="Search"><button class="btn btn-outline-warning btn-rounded btn-sm my-0" type="submit">Search</button>
                         </form>
@@ -149,17 +149,18 @@
 
                                     <div class="form-group">
                                         <label><b>Check In:</b></label>
-                                        <input type="Date" id="checkin" class="form-control" name="checkin">
+                                        <input type="Date" id="checkin" class="form-control" name="checkin" required>
                                     </div>
 
                                       <div class="form-group">
                                         <label><b>Check Out:</b></label>
-                                        <input type="Date" id="checkout" class="form-control" name="checkout">
+                                        <input type="Date" id="checkout" class="form-control" name="checkout" required>
                                     </div>
 
                                        <div class="form-group">
                                         <label><b>Adults:</b></label>
-                                           <select name="adult" id="adults" class="form-control">
+                                           <select name="adult" id="adults" class="form-control" required>
+                                                <option value=""></option>
                                               <option value="0">0</option>
                                               <option value="1">1</option>
                                               <option value="2">2</option>
@@ -170,7 +171,8 @@
 
                                        <div class="form-group">
                                         <label><b>Children:</b></label>
-                                           <select name="child" id="children" class="form-control">
+                                           <select name="child" id="children" class="form-control" required>
+                                                <option value=""></option>
                                               <option value="0">0</option>
                                               <option value="1">1</option>
                                               <option value="2">2</option>

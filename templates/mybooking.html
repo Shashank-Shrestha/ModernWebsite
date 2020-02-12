@@ -87,6 +87,8 @@
         <th scope="col">Children</th>
         <th scope="col">BookedDate</th>
          <th scope="col"></th>
+         <th scope="col"></th>
+
     </tr>
   </thead>
 
@@ -95,7 +97,6 @@
     <tr>
 
         <td>{{request.user}}</td>
-
         <td>{{i.RoomType.RoomType}}</td>
         <td>${{i.RoomType.Price}}</td>
         <td>{{i.Check_In}}</td>
@@ -103,10 +104,82 @@
         <td>{{i.Adults}}</td>
         <td>{{i.Children}}</td>
         <td>{{i.BookedDate}}</td>
+        <td><a href="" data-toggle="modal" data-target="#update{{ i.id }}" type="submit" class="btn btn-danger btn-primary btn-block ">Update</a></td>
         <td><a href="../cancel/{{i.id}}" type="submit" class="btn btn-danger btn-primary btn-block ">Cancel</a></td>
 
 
     </tr>
+      <div class="modal fade" id="update{{ i.id }}" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><b>Update</b></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label><b>RoomType:</b></label>
+                                        <input type="text" class="form-control" name="id" value="{{ i.id }}" hidden >
+                                        <input type="text" class="form-control" name="roomtype" value="{{ i.RoomType.RoomType }}" readonly>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label><b>Price($):</b></label>
+                                        <input type="text" class="form-control" name="mid" value="${{ i.RoomType.Price }}" readonly>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label><b>Check In:</b></label>
+                                        <input type="Date" id="checkin" value="{{ i.Check_In }}" class="form-control" name="checkin">
+                                    </div>
+
+                                      <div class="form-group">
+                                        <label><b>Check Out:</b></label>
+                                        <input type="Date" id="checkout" value="{{ i.Check_Out }}" class="form-control" name="checkout">
+                                    </div>
+
+                                       <div class="form-group">
+                                        <label><b>Adults:</b></label>
+                                           <select name="adult" id="adults" class="form-control">
+                                              <option value="0" {% if i.Adults == 0 %} selected {% endif %}>0</option>
+                                              <option value="1" {% if i.Adults == 1 %} selected {% endif %}>1</option>
+                                              <option value="2" {% if i.Adults == 2 %} selected {% endif %}>2</option>
+                                              <option value="3" {% if i.Adults == 3 %} selected {% endif %}>3</option>
+                                              <option value="4" {% if i.Adults == 4 %} selected {% endif %}>4+</option>
+                                            </select>
+                                       </div>
+
+                                       <div class="form-group">
+                                        <label><b>Children:</b></label>
+                                           <select name="child" id="children" class="form-control">
+                                              <option value="0" {% if i.Children == 0 %} selected {% endif %}>0</option>
+                                              <option value="1" {% if i.Children == 1 %} selected {% endif %}>1</option>
+                                              <option value="2" {% if i.Children == 2 %} selected {% endif %}>2</option>
+                                              <option value="3"{% if i.Children == 3 %} selected {% endif %}>3</option>
+                                              <option value="4"{% if i.Children == 4 %} selected {% endif %}>4+</option>
+                                            </select>
+                                       </div>
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                <button type="submit" class="btn btn-primary">UPDATE</button>
+                            </div>
+
+                                </form>
+                        </div>
+
+                    </div>
+                </div>
+      </div>
+
+
   {% endfor %}
 
 

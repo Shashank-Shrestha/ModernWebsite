@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
 from .models import Rooms, Bookings
 
 
@@ -18,6 +17,16 @@ def room(request):
 
 
 def bookings(request):
+    if request.method=="POST":
+        rid=request.POST['id']
+        obj=Bookings.objects.get(id=rid)
+        obj.RoomType.RoomType=request.POST['roomtype']
+        obj.RoomType.Price=request.POST['mid']
+        obj.Check_In=request.POST['checkin']
+        obj.Check_Out=request.POST['checkout']
+        obj.Adults=request.POST['adult']
+        obj.Children=request.POST['child']
+        obj.save()
     booking = Bookings.objects.filter(user_id=request.user)
     return render(request, "mybooking.html", {'booking': booking})
 
@@ -48,6 +57,7 @@ def cancelroom(request, pk):
     canceled = Bookings.objects.get(id=pk)
     canceled.delete()
     return redirect('../../../bookings/booklist')
+
 
 def login_first(request):
     return render(request, 'login.html')

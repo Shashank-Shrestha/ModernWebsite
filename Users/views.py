@@ -89,8 +89,14 @@ def login(request):
             return redirect('/home')
         else:
             messages.error(request, 'Error: Username or Password is incorrect')
-
     return render(request, "login.html")
+
+
+# def login(request):
+#     if 'email' not in request.session:
+#         return render(request, 'login.html')
+#     else:
+#         return redirect('index.html')
 
 
 def blog1(request):
@@ -141,9 +147,10 @@ def updateReview(request, pk):
 def showupdatepage(request):
     return render(request, "update.html")
 
+
 def save_update(request,pk):
 
-    if request.method =='POST':
+    if request.method == 'POST':
         review = Review.objects.get(id=pk)
         review_message = request.POST.get('user_review')
         review.message = review_message
